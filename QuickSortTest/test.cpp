@@ -220,26 +220,6 @@ TEST(Comp_test, descending) //по убыванию
 		EXPECT_EQ(sortedArray[i], arr[i]);
 }
 
-TEST(Speed_test, my_alg) //тестирование скорости работы моего алгоритма сортировки
-{
-	const int count = 100000;
-	int arr[count];
-	for (int i = 0; i < count; i++)
-		arr[i] = 1 + rand() % count;
-	QuickSort(arr, 0, count - 1, [](auto a, auto b) {return a < b; });
-	EXPECT_TRUE(true);
-}
-
-TEST(Speed_test, standart_alg) //тестирование скорости работы стандартного алгоритма сортировки
-{
-	const int count = 100000;
-	int arr[count];
-	for (int i = 0; i < count; i++)
-		arr[i] = 1 + rand() % count;
-	qsort(arr, count, sizeof(int), compare);
-	EXPECT_TRUE(true);
-}
-
 int compare(const void * x1, const void * x2)   
 {
 	return (*(int*)x1 - *(int*)x2);              
